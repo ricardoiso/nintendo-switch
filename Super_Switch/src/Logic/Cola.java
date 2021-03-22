@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author gabri
  */
 public class Cola {
-    private Nodo inicioCola, finalCola;
+    public Nodo inicioCola, finalCola;
     String Cola = "";
 
     public Cola() {
@@ -113,5 +113,9 @@ public class Cola {
             recorrido = recorrido.siguiente;
         }
     
+    }
+    
+    public Nodo devolverPrimero(){
+     return inicioCola;
     }
 }

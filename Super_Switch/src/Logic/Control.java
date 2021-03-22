@@ -24,18 +24,21 @@ public class Control {
         for (int i = 0; i < 10; i++) {
             adminG.crearSS();
         }
-        
-        System.out.println(adminG.p1.length());
+        for (int i = 0; i < 2; i++) {
+            System.out.println(adminG.p1.length());
         System.out.println(adminG.p2.length());
         System.out.println(adminG.p3.length());
         superSwitch consola1 = adminG.consola();
         //primer ciclo
         System.out.println(consola1.prioridad);
         adminG.robot(bot, consola1);
+        System.out.println(adminG.p2.devolverPrimero().informacion.contador);
+        }
+        
         //segundo ciclo
-        superSwitch consola2 = adminG.consola();
-        System.out.println("Esta es la prioridad: " +consola2.prioridad);
-        System.out.println("\n");
+//        superSwitch consola2 = adminG.consola();
+//        System.out.println("Esta es la prioridad: " +consola2.prioridad);
+//        System.out.println("\n");
         
         
         
