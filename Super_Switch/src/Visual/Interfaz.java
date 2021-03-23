@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Visual;
+
 import Logic.Control;
 
 /**
@@ -11,7 +12,7 @@ import Logic.Control;
  * @author Maria Valentina Soto
  */
 public class Interfaz extends javax.swing.JFrame {
-    
+
     private Control app;
 
     /**
@@ -34,10 +35,13 @@ public class Interfaz extends javax.swing.JFrame {
 
         jPanelApp = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
+        colaUno = new javax.swing.JLabel();
+        colaDos = new javax.swing.JLabel();
+        colaTres = new javax.swing.JLabel();
+        colaRevisados = new javax.swing.JLabel();
         labelBackg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 714));
         setUndecorated(true);
         setResizable(false);
 
@@ -57,6 +61,22 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         jPanelApp.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, 60, 30));
+
+        colaUno.setBackground(new java.awt.Color(255, 255, 255));
+        colaUno.setForeground(new java.awt.Color(255, 255, 255));
+        jPanelApp.add(colaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 150, 30));
+
+        colaDos.setBackground(new java.awt.Color(255, 255, 255));
+        colaDos.setForeground(new java.awt.Color(255, 255, 255));
+        jPanelApp.add(colaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 190, 30));
+
+        colaTres.setBackground(new java.awt.Color(255, 255, 255));
+        colaTres.setForeground(new java.awt.Color(255, 255, 255));
+        jPanelApp.add(colaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 200, 30));
+
+        colaRevisados.setBackground(new java.awt.Color(255, 255, 255));
+        colaRevisados.setForeground(new java.awt.Color(255, 255, 255));
+        jPanelApp.add(colaRevisados, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, 250, 30));
 
         labelBackg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Segundo Proyecto Sistemas Operativos.jpg"))); // NOI18N
         jPanelApp.add(labelBackg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 714));
@@ -81,6 +101,10 @@ public class Interfaz extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
+    public static javax.swing.JLabel colaDos;
+    public static javax.swing.JLabel colaRevisados;
+    public static javax.swing.JLabel colaTres;
+    public static javax.swing.JLabel colaUno;
     private javax.swing.JPanel jPanelApp;
     private javax.swing.JLabel labelBackg;
     // End of variables declaration//GEN-END:variables

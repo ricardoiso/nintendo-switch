@@ -10,6 +10,7 @@ package Logic;
  * @author gabri
  */
 public class Nodo {
+
     superSwitch informacion;
     Nodo siguiente;
 }

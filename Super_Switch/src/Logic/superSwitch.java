@@ -12,6 +12,7 @@ import java.util.Random;
  * @author gabri
  */
 public class superSwitch {
+
     public int ID;
     public int prioridad;
     public int contador;

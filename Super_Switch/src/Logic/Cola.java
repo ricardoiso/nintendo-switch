@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  * @author gabri
  */
 public class Cola {
+
     public Nodo inicioCola, finalCola;
     String Cola = "";
 
@@ -97,25 +98,25 @@ public class Cola {
 //            System.out.println(cadena);
             tamano = cadena.length;
             //JOptionPane.showMessageDialog(null, tamano);
-            
+
             Cola = "";
-            
+
 //        return tamano;
         }
         return tamano;
     }
 
-    public void aumentoContador(){
+    public void aumentoContador() {
         int tamano = this.length();
         Nodo recorrido = inicioCola;
         for (int i = 0; i < tamano; i++) {
-            recorrido.informacion.contador =  recorrido.informacion.contador+1;
+            recorrido.informacion.contador = recorrido.informacion.contador + 1;
             recorrido = recorrido.siguiente;
         }
-    
+
     }
-    
-    public Nodo devolverPrimero(){
-     return inicioCola;
+
+    public Nodo devolverPrimero() {
+        return inicioCola;
     }
 }

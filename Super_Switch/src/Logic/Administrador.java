@@ -104,15 +104,15 @@ public class Administrador {
             consolaAuxR = colaR.Extraer();
             if (consolaAuxR.contador >= 15 && consolaAuxR.prioridad != 1) {
                 consolaAuxR.contador = 0;
-                consolaAuxR.prioridad +=1;
-            if (consolaAuxR.prioridad == 3) {
+                consolaAuxR.prioridad += 1;
+                if (consolaAuxR.prioridad == 3) {
                     p3.Insertar(consolaAuxR);
-            }else if (consolaAuxR.prioridad == 2) {
-                 p2.Insertar(consolaAuxR);
-                }else if ( consolaAuxR.prioridad == 1) {
+                } else if (consolaAuxR.prioridad == 2) {
+                    p2.Insertar(consolaAuxR);
+                } else if (consolaAuxR.prioridad == 1) {
                     p1.Insertar(consolaAuxR);
                 }
-    
+
             }
         }
 
