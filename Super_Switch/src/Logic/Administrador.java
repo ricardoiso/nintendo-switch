@@ -24,7 +24,7 @@ public class Administrador {
         this.p1 = p1;
         this.p2 = p2;
         this.p3 = p3;
-        this.colaR = colaR;
+        this.colaR = colaR; // cola de revisión
     }
 
     public void crearSS() {
@@ -77,12 +77,13 @@ public class Administrador {
 
     public void revisionColas() {  //Verificar el contador de las consolas en la cola
         int tamano2 = p2.length();
-        int tamano3 = p2.length();
+        int tamano3 = p3.length();
         superSwitch consolaAux;
         for (int i = 0; i < tamano2; i++) {
             if (p2.inicioCola.informacion.contador == 15) {
                 consolaAux = p2.Extraer();
                 consolaAux.contador = 0;
+                consolaAux.prioridad--;
                 p1.Insertar(consolaAux);
             }
         }
@@ -90,6 +91,7 @@ public class Administrador {
             if (p3.inicioCola.informacion.contador == 15) {
                 consolaAux = p3.Extraer();
                 consolaAux.contador = 0;
+                consolaAux.prioridad--;
                 p2.Insertar(consolaAux);
             }
         }

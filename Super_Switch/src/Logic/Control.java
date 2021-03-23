@@ -18,6 +18,7 @@ public class Control {
     public Cola p3 = new Cola();
     public Cola colaR = new Cola();
     public Robot bot;
+    
     public void start() {
         Administrador adminG = new Administrador(p1,p2,p3,colaR);
         Robot bot = new Robot(adminG);

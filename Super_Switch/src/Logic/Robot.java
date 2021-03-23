@@ -23,8 +23,6 @@ public class Robot {
         this.admin = admin;
     }
 
-    
-
     public void revision(superSwitch ss) {
         double random = Math.random();
         System.out.println(random);
