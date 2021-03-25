@@ -65,23 +65,23 @@ public class Interfaz extends javax.swing.JFrame {
 
         robRevisa.setBackground(new java.awt.Color(255, 255, 255));
         robRevisa.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelApp.add(robRevisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 270, 30));
+        jPanelApp.add(robRevisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 220, 40, 30));
 
         colaUno.setBackground(new java.awt.Color(255, 255, 255));
         colaUno.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelApp.add(colaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 450, 30));
+        jPanelApp.add(colaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 370, 30));
 
         colaDos.setBackground(new java.awt.Color(255, 255, 255));
         colaDos.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelApp.add(colaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 450, 30));
+        jPanelApp.add(colaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 370, 30));
 
         colaTres.setBackground(new java.awt.Color(255, 255, 255));
         colaTres.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelApp.add(colaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 450, 30));
+        jPanelApp.add(colaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 370, 30));
 
         colaRevisados.setBackground(new java.awt.Color(255, 255, 255));
         colaRevisados.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelApp.add(colaRevisados, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 450, 30));
+        jPanelApp.add(colaRevisados, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 370, 30));
 
         labelBackg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Segundo Proyecto Sistemas Operativos.jpg"))); // NOI18N
         jPanelApp.add(labelBackg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 714));
