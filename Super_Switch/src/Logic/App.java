@@ -13,7 +13,7 @@ public class App {
      */
     public static void main(String[] args) {
         Control app = new Control();
-//        new Interfaz(app).setVisible(true);
+        new Interfaz(app).setVisible(true);
         app.start();
     }
 

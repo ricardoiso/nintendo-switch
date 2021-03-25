@@ -1,4 +1,3 @@
-
 package Logic;
 
 import javax.swing.JOptionPane;
@@ -59,12 +58,15 @@ public class Cola {
     }
 
     //Método para mostrar el contenido de la cola
-    public void MostrarContenido() {
+    public String MostrarContenido() {
         Nodo recorrido = inicioCola;
         String ColaInvertida = "";
 
         while (recorrido != null) {
-            Cola += recorrido.informacion + " ";
+            //Mostrar cola sin contador:
+            Cola += "[" + recorrido.informacion.ID + "]--> "; 
+            //Mostrar cola con contador:
+//            Cola += "[" + recorrido.informacion.ID + "_|_" + recorrido.informacion.contador + "]--> "; 
             recorrido = recorrido.siguiente;
         }
 
@@ -74,8 +76,9 @@ public class Cola {
             ColaInvertida += " " + cadena[i];
         }
 
-        JOptionPane.showMessageDialog(null, ColaInvertida);
+//        JOptionPane.showMessageDialog(null, ColaInvertida);
         Cola = "";
+        return ColaInvertida;
     }
 
     public int length() {
@@ -86,14 +89,15 @@ public class Cola {
 //            JOptionPane.showMessageDialog(null, tamano);
         } else {
             while (recorrido != null) {
-                Cola += recorrido.informacion + " ";
+                Cola += "<--[" + recorrido.informacion.ID + "] ";
                 recorrido = recorrido.siguiente;
             }
 
             String cadena[] = Cola.split(" ");
-//            System.out.println(cadena);
+//            System.out.println("Cola prueba es "+ Cola);
+//            System.out.println("Cadena es "+ cadena.length);
             tamano = cadena.length;
-            //JOptionPane.showMessageDialog(null, tamano);
+//            JOptionPane.showMessageDialog(null, tamano);
 
             Cola = "";
 
@@ -104,6 +108,7 @@ public class Cola {
 
     public void aumentoContador() {
         int tamano = this.length();
+//        System.out.println("El tamaño es " + tamano);
         Nodo recorrido = inicioCola;
         for (int i = 0; i < tamano; i++) {
             recorrido.informacion.contador = recorrido.informacion.contador + 1;

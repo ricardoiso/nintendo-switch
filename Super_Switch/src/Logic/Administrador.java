@@ -29,7 +29,7 @@ public class Administrador {
 
     public void crearSS() {
         this.listaSS.add(new superSwitch(this));
-        System.out.println(listaSS.get(totalCreado).ID);
+        System.out.println("Creada consola numero " + listaSS.get(totalCreado).ID);
         totalCreado += 1;
 //        p2.Insertar(listaSS.get(listaSS.size() - 1));
         if (listaSS.get(listaSS.size() - 1).prioridad == 0) {
@@ -49,12 +49,12 @@ public class Administrador {
         if (p1.ColaVacia()) {
             if (p2.ColaVacia()) {
                 consola = p3.Extraer();
-                consola.contador = 0;
+//                consola.contador = 0;
                 p3.aumentoContador();
                 return consola;
             } else {
                 consola = p2.Extraer();
-                consola.contador = 0;
+//                consola.contador = 0;
                 p2.aumentoContador();
                 p3.aumentoContador();
                 return consola;
@@ -64,8 +64,9 @@ public class Administrador {
             p2.aumentoContador();
             p3.aumentoContador();
 //            consola2 = p1.Extraer();
+//            System.out.println("Este es el contador: "+ consola.contador);
 //            System.out.println("Este es el contador: "+ consola2.contador);
-            consola.contador = 0;
+//            consola.contador = 0;
             return consola;
         }
     }
@@ -101,11 +102,9 @@ public class Administrador {
         superSwitch consolaAuxR;
         if (random < .045) {
             consolaAuxR = colaR.Extraer();
-            if (consolaAuxR.contador >= 15) {
-                if (consolaAuxR.prioridad != 1) {
-                    consolaAuxR.contador = 0;
-                    consolaAuxR.prioridad += 1;
-                }
+            if (consolaAuxR.contador >= 15 && consolaAuxR.prioridad != 1) {
+                consolaAuxR.contador = 0;
+                consolaAuxR.prioridad += 1;
 
                 switch (consolaAuxR.prioridad) {
                     case 3:

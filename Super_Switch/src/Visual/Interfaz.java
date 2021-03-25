@@ -64,19 +64,23 @@ public class Interfaz extends javax.swing.JFrame {
 
         colaUno.setBackground(new java.awt.Color(255, 255, 255));
         colaUno.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelApp.add(colaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 150, 30));
+        colaUno.setText("Okkk");
+        jPanelApp.add(colaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 380, 30));
 
         colaDos.setBackground(new java.awt.Color(255, 255, 255));
         colaDos.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelApp.add(colaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 190, 30));
+        colaDos.setText("Okkk");
+        jPanelApp.add(colaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 380, 30));
 
         colaTres.setBackground(new java.awt.Color(255, 255, 255));
         colaTres.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelApp.add(colaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 200, 30));
+        colaTres.setText("Okkk");
+        jPanelApp.add(colaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 380, 30));
 
         colaRevisados.setBackground(new java.awt.Color(255, 255, 255));
         colaRevisados.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelApp.add(colaRevisados, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, 250, 30));
+        colaRevisados.setText("Okkk");
+        jPanelApp.add(colaRevisados, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 380, 30));
 
         labelBackg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Segundo Proyecto Sistemas Operativos.jpg"))); // NOI18N
         jPanelApp.add(labelBackg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 714));
