@@ -38,7 +38,5 @@ public class Control {
 //        superSwitch consola2 = adminG.consola();
 //        System.out.println("Esta es la prioridad: " +consola2.prioridad);
 //        System.out.println("\n");
-//        JOptionPane.showConfirmDialog(null, "Este si lo reventamos ???", "Proyectazo", 0, JOptionPane.QUESTION_MESSAGE);
     }
-
 }

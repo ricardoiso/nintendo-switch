@@ -14,10 +14,10 @@ import java.util.ArrayList;
 public class Administrador {
 
     public int totalCreado = 0;
-    public Cola p1;
-    public Cola p2;
-    public Cola p3;
-    public Cola colaR;
+    public Cola p1; // Cola de prioridad 1 
+    public Cola p2; // Cola de prioridad 2
+    public Cola p3; // Cola de prioridad 3 
+    public Cola colaR; // Cola de Revision 
     ArrayList<superSwitch> listaSS = new ArrayList<superSwitch>();
 
     public Administrador(Cola p1, Cola p2, Cola p3, Cola colaR) {
@@ -72,7 +72,6 @@ public class Administrador {
 
     public void robot(Robot bot, superSwitch ss) {//envía la switch al robot
         bot.revision(ss);
-
     }
 
     public void revisionColas() {  //Verificar el contador de las consolas en la cola
@@ -102,15 +101,24 @@ public class Administrador {
         superSwitch consolaAuxR;
         if (random < .045) {
             consolaAuxR = colaR.Extraer();
-            if (consolaAuxR.contador >= 15 && consolaAuxR.prioridad != 1) {
-                consolaAuxR.contador = 0;
-                consolaAuxR.prioridad += 1;
-                if (consolaAuxR.prioridad == 3) {
-                    p3.Insertar(consolaAuxR);
-                } else if (consolaAuxR.prioridad == 2) {
-                    p2.Insertar(consolaAuxR);
-                } else if (consolaAuxR.prioridad == 1) {
-                    p1.Insertar(consolaAuxR);
+            if (consolaAuxR.contador >= 15) {
+                if (consolaAuxR.prioridad != 1) {
+                    consolaAuxR.contador = 0;
+                    consolaAuxR.prioridad += 1;
+                }
+
+                switch (consolaAuxR.prioridad) {
+                    case 3:
+                        p3.Insertar(consolaAuxR);
+                        break;
+                    case 2:
+                        p2.Insertar(consolaAuxR);
+                        break;
+                    case 1:
+                        p1.Insertar(consolaAuxR);
+                        break;
+                    default:
+                        break;
                 }
 
             }

@@ -32,21 +32,21 @@ public class Robot {
         }
         if (0.3 <= random && random < 0.5) {
             admin.colaR.Insertar(ss);
-            Interfaz.colaRevisados.setText(Integer.toString(admin.colaR.length()));
+//            Interfaz.colaRevisados.setText(Integer.toString(admin.colaR.length()));
             System.out.println(admin.colaR.length());
         }
         if (0.5 <= random && random <= 1) {
             if (ss.prioridad == 0) {
                 admin.p1.Insertar(ss);
-                Interfaz.colaUno.setText(Integer.toString(admin.p1.length()));
+//                Interfaz.colaUno.setText(Integer.toString(admin.p1.length()));
                 System.out.println(admin.p1.length());
             } else if (ss.prioridad == 1) {
                 admin.p2.Insertar(ss);
-                Interfaz.colaDos.setText(Integer.toString(admin.p2.length()));
+//                Interfaz.colaDos.setText(Integer.toString(admin.p2.length()));
                 System.out.println(admin.p2.length());
             } else if (ss.prioridad == 2) {
                 admin.p3.Insertar(ss);
-                Interfaz.colaTres.setText(Integer.toString(admin.p3.length()));
+//                Interfaz.colaTres.setText(Integer.toString(admin.p3.length()));
                 System.out.println(admin.p3.length());
             }
         }
