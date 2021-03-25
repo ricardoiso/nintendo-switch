@@ -18,6 +18,7 @@ public class Administrador {
     public Cola p2; // Cola de prioridad 2
     public Cola p3; // Cola de prioridad 3 
     public Cola colaR; // Cola de Revision 
+    public int maxContador = 15;
     ArrayList<superSwitch> listaSS = new ArrayList<superSwitch>();
 
     public Administrador(Cola p1, Cola p2, Cola p3, Cola colaR) {
@@ -80,7 +81,7 @@ public class Administrador {
         int tamano3 = p3.length();
         superSwitch consolaAux;
         for (int i = 0; i < tamano2; i++) {
-            if (p2.inicioCola.informacion.contador == 15) {
+            if (p2.inicioCola.informacion.contador == maxContador) {
                 consolaAux = p2.Extraer();
                 consolaAux.contador = 0;
                 consolaAux.prioridad--;
@@ -88,7 +89,7 @@ public class Administrador {
             }
         }
         for (int j = 0; j < tamano3; j++) {
-            if (p3.inicioCola.informacion.contador == 15) {
+            if (p3.inicioCola.informacion.contador == maxContador) {
                 consolaAux = p3.Extraer();
                 consolaAux.contador = 0;
                 consolaAux.prioridad--;

@@ -17,68 +17,106 @@ public class Control extends Thread {
     public Cola p3 = new Cola();
     public Cola colaR = new Cola();
     public Robot bot;
+    public int tiempo = 7;
 
     public void start() {
         Administrador adminG = new Administrador(p1, p2, p3, colaR);
         Robot bot = new Robot(adminG);
+        JOptionPane.showMessageDialog(null, "Se ha creado la primera consola.");
         adminG.crearSS();
-        adminG.crearSS();
-        for (int i = 0; i < 10; i++) {
-            adminG.crearSS();
-        }
-        int contador=1 ;
-        while(true){
-            
+        Interfaz.contador.setText("Sin operar");
+        Interfaz.colaUno.setText(adminG.p1.MostrarContenido());
+        Interfaz.colaDos.setText(adminG.p2.MostrarContenido());
+        Interfaz.colaTres.setText(adminG.p3.MostrarContenido());
+        Interfaz.colaRevisados.setText(adminG.colaR.MostrarContenido());
+        Interfaz.colaMercado.setText(bot.mercado.MostrarContenido());
+        //JOptionPane.showMessageDialog(null, bot.mercado.length());
+//        for (int i = 0; i < 10; i++) {
+//            adminG.crearSS();
+//        }
+        int contador = 1;
+        while (true) {
+            if (p1.ColaVacia() && p2.ColaVacia() && p3.ColaVacia() && contador != 2) {
+                if (colaR.ColaVacia()) {
+                    adminG.crearSS();
+                } else {
+                    adminG.reparacion_prioridad();
+                }
+            }
             if (contador == 2) {
                 adminG.crearSS();
-                JOptionPane.showMessageDialog(null, "Consolas Nintendo Super Switch creadas.");
+                Interfaz.colaUno.setText(adminG.p1.MostrarContenido());
+                Interfaz.colaDos.setText(adminG.p2.MostrarContenido());
+                Interfaz.colaTres.setText(adminG.p3.MostrarContenido());
+                Interfaz.colaRevisados.setText(adminG.colaR.MostrarContenido());
+                Interfaz.colaMercado.setText(bot.mercado.MostrarContenido());
+                JOptionPane.showMessageDialog(null, "Consola Nintendo Super Switch creada.");
                 contador = 1;
-                if(!colaR.ColaVacia()){
-                    JOptionPane.showMessageDialog(null, "La lista de colas de reparaciones se vaciará.");
-            adminG.reparacion_prioridad();
-        }
+                double random = Math.random();
+                if (!colaR.ColaVacia() && random <= 0.7) {
+                    JOptionPane.showMessageDialog(null, "Se reinsertará en su cola respectiva al primer elemento de la cola de reparación.");
+                    adminG.reparacion_prioridad();
+                }
             }
             contador++;
-        try {
-            
-            Thread.sleep(000);
+            try {
 
-            System.out.println("\n+La Cola uno tiene " + adminG.p1.length() + " consolas.");
-            System.out.println("+La Cola dos tiene " + adminG.p2.length() + " consolas.");
-            System.out.println("+La Cola tres tiene " + adminG.p3.length() + " consolas.\n");
+                Thread.sleep(2000);
 
-            JOptionPane.showMessageDialog(null, "El Administrador ha iniciado a operar.");
-            Thread.sleep(1000);
-            
-            Interfaz.colaUno.setText(adminG.p1.MostrarContenido());
-            Interfaz.colaDos.setText(adminG.p2.MostrarContenido());
-            Interfaz.colaTres.setText(adminG.p3.MostrarContenido());
-            Interfaz.colaRevisados.setText(adminG.colaR.MostrarContenido());
+                System.out.println("\n+La Cola uno tiene " + adminG.p1.length() + " consolas.");
+                System.out.println("+La Cola dos tiene " + adminG.p2.length() + " consolas.");
+                System.out.println("+La Cola tres tiene " + adminG.p3.length() + " consolas.\n");
 
-            superSwitch consolaAuxiliar;
+                JOptionPane.showMessageDialog(null, "El Administrador ha iniciado a operar.");
+                Thread.sleep(1000);
+
+                Interfaz.colaUno.setText(adminG.p1.MostrarContenido());
+                Interfaz.colaDos.setText(adminG.p2.MostrarContenido());
+                Interfaz.colaTres.setText(adminG.p3.MostrarContenido());
+                Interfaz.colaRevisados.setText(adminG.colaR.MostrarContenido());
+                Interfaz.colaMercado.setText(bot.mercado.MostrarContenido());
+
+                superSwitch consolaAuxiliar;
 //            for (int i = 0; i < 50; i++) {
                 consolaAuxiliar = adminG.consola();
+                adminG.revisionColas();
 
                 //primer ciclo
 //            System.out.println("\n*La consola Auxiliar tiene prioridad " + consolaAuxiliar.prioridad);
-                JOptionPane.showMessageDialog(null, "El robot revisa la consola " + consolaAuxiliar.ID);
-                adminG.robot(bot, consolaAuxiliar);
-                Thread.sleep(7000);
                 Interfaz.colaUno.setText(adminG.p1.MostrarContenido());
-            Interfaz.colaDos.setText(adminG.p2.MostrarContenido());
-            Interfaz.colaTres.setText(adminG.p3.MostrarContenido());
-            Interfaz.colaRevisados.setText(adminG.colaR.MostrarContenido());
+                Interfaz.colaDos.setText(adminG.p2.MostrarContenido());
+                Interfaz.colaTres.setText(adminG.p3.MostrarContenido());
+                Interfaz.colaRevisados.setText(adminG.colaR.MostrarContenido());
+                Interfaz.colaMercado.setText(bot.mercado.MostrarContenido());
+                JOptionPane.showMessageDialog(null, "El robot revisa la consola " + consolaAuxiliar.ID);
+                Interfaz.tiempo.setText(String.valueOf(consolaAuxiliar.ID));
+                Interfaz.contador.setText("Sin operar");
+                int time = 0;
+                for (int i = 0; i < tiempo+1; i++) {
+                    Interfaz.contador.setText(String.valueOf(time)+"s");
+                    Thread.sleep(1000);
+                    time++;
+                }
+                Interfaz.contador.setText("Sin operar");
+                adminG.robot(bot, consolaAuxiliar);
+                Interfaz.tiempo.setText("x");
+                
+                
+
+                Interfaz.colaUno.setText(adminG.p1.MostrarContenido());
+                Interfaz.colaDos.setText(adminG.p2.MostrarContenido());
+                Interfaz.colaTres.setText(adminG.p3.MostrarContenido());
+                Interfaz.colaRevisados.setText(adminG.colaR.MostrarContenido());
+                Interfaz.colaMercado.setText(bot.mercado.MostrarContenido());
 //            System.out.println("\nEl contador de la Segunda Cola es " + adminG.p2.devolverPrimero().informacion.contador);
 
                 //segundo ciclo
 //        superSwitch consola2 = adminG.consola();
 //        System.out.println("Esta es la prioridad: " +consola2.prioridad);
 //            }//fin for
-
-            Interfaz.colaRevisados.setText(adminG.colaR.MostrarContenido());
-        } catch (InterruptedException e) {
-            System.out.println("Errorrrrr: " + e);
+            } catch (InterruptedException e) {
+                System.out.println("Errorrrrr: " + e);
+            }
         }
-    }
     }
 }
