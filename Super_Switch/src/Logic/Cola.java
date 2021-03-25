@@ -64,7 +64,7 @@ public class Cola {
 
         while (recorrido != null) {
             //Mostrar cola sin contador:
-            Cola += "[" + recorrido.informacion.ID + "]--> "; 
+            Cola += "(" + recorrido.informacion.ID + ")--> "; 
             //Mostrar cola con contador:
 //            Cola += "[" + recorrido.informacion.ID + "_|_" + recorrido.informacion.contador + "]--> "; 
             recorrido = recorrido.siguiente;
@@ -75,7 +75,7 @@ public class Cola {
         for (int i = cadena.length - 1; i >= 0; i--) {
             ColaInvertida += " " + cadena[i];
         }
-
+        
 //        JOptionPane.showMessageDialog(null, ColaInvertida);
         Cola = "";
         return ColaInvertida;
