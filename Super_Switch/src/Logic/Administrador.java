@@ -40,8 +40,8 @@ public class Administrador {
         }
         if (listaSS.get(listaSS.size() - 1).prioridad == 2) {
             this.p3.Insertar(listaSS.get(listaSS.size() - 1));
+        
         }
-
     }
 
     public superSwitch consola() {//extraer la switch que esta al inicio de la cola prioridad más alta y lo retorna
@@ -100,27 +100,20 @@ public class Administrador {
     public void reparacion_prioridad() {//Devuelve la primera consola de la cola de reparaciones y la inserta en la cola de su prioridad
         double random = Math.random();
         superSwitch consolaAuxR;
-        if (random < .045) {
+        if (random < 0.45) {
             consolaAuxR = colaR.Extraer();
-            if (consolaAuxR.contador >= 15 && consolaAuxR.prioridad != 1) {
-                consolaAuxR.contador = 0;
-                consolaAuxR.prioridad += 1;
-
-                switch (consolaAuxR.prioridad) {
-                    case 3:
-                        p3.Insertar(consolaAuxR);
-                        break;
-                    case 2:
-                        p2.Insertar(consolaAuxR);
-                        break;
-                    case 1:
-                        p1.Insertar(consolaAuxR);
-                        break;
-                    default:
-                        break;
-                }
-
+            System.out.println(consolaAuxR.ID);
+            System.out.println(consolaAuxR.prioridad);
+            if (consolaAuxR.prioridad == 1) {
+                p2.Insertar(consolaAuxR);
+            }if (consolaAuxR.prioridad == 0) {
+                p1.Insertar(consolaAuxR);
+            }if (consolaAuxR.prioridad == 2) {
+                p3.Insertar(consolaAuxR);
             }
+
+                
+            
         }
 
     }
