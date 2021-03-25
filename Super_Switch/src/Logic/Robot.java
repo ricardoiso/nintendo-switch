@@ -6,7 +6,7 @@
 package Logic;
 
 import java.util.ArrayList;
-
+import Visual.Interfaz;
 
 import java.util.*;
 
@@ -26,7 +26,8 @@ public class Robot {
     public void revision(superSwitch ss) {
         double random = Math.random();
 //        System.out.println("El random de robot es " + random);
-        
+        Interfaz.robRevisa.setText(Integer.toString(ss.ID));
+
         if (0 <= random && random < 0.3) { //agregar a mercado
             mercado.add(ss);
             System.out.println("El mercado tiene " + mercado.size() + " cantidad de consolas");

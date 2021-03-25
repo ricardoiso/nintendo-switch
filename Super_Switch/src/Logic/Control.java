@@ -41,14 +41,16 @@ public class Control extends Thread {
                 consolaAuxiliar = adminG.consola();
                 //primer ciclo
 //            System.out.println("\n*La consola Auxiliar tiene prioridad " + consolaAuxiliar.prioridad);
+                JOptionPane.showMessageDialog(null, "El robot revisa la consola " + consolaAuxiliar.ID);
                 adminG.robot(bot, consolaAuxiliar);
+                Thread.sleep(7000);
 //            System.out.println("\nEl contador de la Segunda Cola es " + adminG.p2.devolverPrimero().informacion.contador);
-
-            }
 
             //segundo ciclo
 //        superSwitch consola2 = adminG.consola();
 //        System.out.println("Esta es la prioridad: " +consola2.prioridad);
+            }
+
             Interfaz.colaRevisados.setText(adminG.colaR.MostrarContenido());
         } catch (InterruptedException e) {
             System.out.println("Errorrrrr: " + e);
