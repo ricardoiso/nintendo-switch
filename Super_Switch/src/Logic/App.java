@@ -4,7 +4,7 @@ import Visual.Interfaz;
 
 /**
  *
- * @author this_serra
+ * @author this_serra, gabri
  */
 public class App {
 
