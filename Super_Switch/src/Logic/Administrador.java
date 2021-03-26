@@ -41,7 +41,7 @@ public class Administrador {
         }
         if (listaSS.get(listaSS.size() - 1).prioridad == 2) {
             this.p3.Insertar(listaSS.get(listaSS.size() - 1));
-        
+
         }
     }
 
@@ -100,17 +100,23 @@ public class Administrador {
 
     public void reparacion_prioridad() {//Devuelve la primera consola de la cola de reparaciones y la inserta en la cola de su prioridad
         double random = Math.random();
+
         superSwitch consolaAuxR;
         if (random < 0.45) {
-            consolaAuxR = colaR.Extraer();
-            System.out.println(consolaAuxR.ID);
-            System.out.println(consolaAuxR.prioridad);
-            if (consolaAuxR.prioridad == 1) {
-                p2.Insertar(consolaAuxR);
-            }if (consolaAuxR.prioridad == 0) {
-                p1.Insertar(consolaAuxR);
-            }if (consolaAuxR.prioridad == 2) {
-                p3.Insertar(consolaAuxR);
+
+            if (!colaR.ColaVacia()) {
+                consolaAuxR = colaR.Extraer();
+                System.out.println(consolaAuxR.ID);
+                System.out.println(consolaAuxR.prioridad);
+                if (consolaAuxR.prioridad == 1) {
+                    p2.Insertar(consolaAuxR);
+                }
+                if (consolaAuxR.prioridad == 0) {
+                    p1.Insertar(consolaAuxR);
+                }
+                if (consolaAuxR.prioridad == 2) {
+                    p3.Insertar(consolaAuxR);
+                }
             }
         }
     }

@@ -17,7 +17,7 @@ public class Control extends Thread {
     public Cola p3 = new Cola();
     public Cola colaR = new Cola();
     public Robot bot;
-    public int tiempo = 7;
+    public int tiempo = 1;
 
     public void start() {
         Administrador adminG = new Administrador(p1, p2, p3, colaR);
@@ -36,28 +36,28 @@ public class Control extends Thread {
 //        }
         int contador = 1;
         while (true) {
-            if (p1.ColaVacia() && p2.ColaVacia() && p3.ColaVacia() && contador != 2) {
+            if (p1.ColaVacia() && p2.ColaVacia() && p3.ColaVacia()) {
                 if (colaR.ColaVacia()) {
                     adminG.crearSS();
                 } else {
                     adminG.reparacion_prioridad();
                 }
             }
-            
+
             adminG.colaR.aumentoContadorR(adminG.maxContador);
-            
-            
+            adminG.reparacion_prioridad();
+
             if (contador == 2) {
-                adminG.crearSS();
-                Interfaz.colaUno.setText(adminG.p1.MostrarContenido());
-                Interfaz.colaDos.setText(adminG.p2.MostrarContenido());
-                Interfaz.colaTres.setText(adminG.p3.MostrarContenido());
-                Interfaz.colaRevisados.setText(adminG.colaR.MostrarContenido());
-                Interfaz.colaMercado.setText(bot.mercado.MostrarContenido());
-                JOptionPane.showMessageDialog(null, "Consola Nintendo Super Switch creada.");
                 contador = 1;
                 double random = Math.random();
                 if (!colaR.ColaVacia() && random <= 0.7) {
+                    adminG.crearSS();
+                    Interfaz.colaUno.setText(adminG.p1.MostrarContenido());
+                    Interfaz.colaDos.setText(adminG.p2.MostrarContenido());
+                    Interfaz.colaTres.setText(adminG.p3.MostrarContenido());
+                    Interfaz.colaRevisados.setText(adminG.colaR.MostrarContenido());
+                    Interfaz.colaMercado.setText(bot.mercado.MostrarContenido());
+                    JOptionPane.showMessageDialog(null, "Consola Nintendo Super Switch creada.");
                     JOptionPane.showMessageDialog(null, "Se reinsertará en su cola respectiva al primer elemento de la cola de reparación.");
                     adminG.reparacion_prioridad();
                 }
@@ -96,16 +96,14 @@ public class Control extends Thread {
                 Interfaz.tiempo.setText(String.valueOf(consolaAuxiliar.ID));
                 Interfaz.contador.setText("Sin operar");
                 int time = 0;
-                for (int i = 0; i < tiempo+1; i++) {
-                    Interfaz.contador.setText(String.valueOf(time)+" s");
+                for (int i = 0; i < tiempo + 1; i++) {
+                    Interfaz.contador.setText(String.valueOf(time) + " s");
                     Thread.sleep(1000);
                     time++;
                 }
                 Interfaz.contador.setText("Sin operar");
                 adminG.robot(bot, consolaAuxiliar);
                 Interfaz.tiempo.setText("x");
-                
-                
 
                 Interfaz.colaUno.setText(adminG.p1.MostrarContenido());
                 Interfaz.colaDos.setText(adminG.p2.MostrarContenido());
