@@ -1,7 +1,7 @@
 # Nintendo-Switch
 Second Operating Systems project, programmed in Java in which queues are used to manage the creation and assembly of the new Nintendo Super Switch consoles.
 
-<img src="\nintendo-switch.jpeg" alt="image from Ricardo Serrano - Avila">
+![Nintendo-Switch execution image](https://github.com/ricardoiso/nintendo-switch/blob/main/nintendo-switch.jpeg?raw=true)
 
 ### Pre-requirements 📋
 
