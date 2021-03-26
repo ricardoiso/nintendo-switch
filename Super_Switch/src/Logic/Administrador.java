@@ -112,10 +112,6 @@ public class Administrador {
             }if (consolaAuxR.prioridad == 2) {
                 p3.Insertar(consolaAuxR);
             }
-
-                
-            
         }
-
     }
 }

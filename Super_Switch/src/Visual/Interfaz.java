@@ -67,7 +67,7 @@ public class Interfaz extends javax.swing.JFrame {
         jPanelApp.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, 60, 30));
 
         contador.setForeground(new java.awt.Color(252, 217, 76));
-        jPanelApp.add(contador, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 250, 110, 30));
+        jPanelApp.add(contador, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 250, 110, 30));
 
         tiempo.setBackground(new java.awt.Color(255, 255, 255));
         tiempo.setFont(new java.awt.Font("MingLiU-ExtB", 1, 14)); // NOI18N
@@ -92,12 +92,12 @@ public class Interfaz extends javax.swing.JFrame {
         colaMercado.setBackground(new java.awt.Color(255, 255, 255));
         colaMercado.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
         colaMercado.setForeground(new java.awt.Color(252, 217, 76));
-        jPanelApp.add(colaMercado, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 340, 30));
+        jPanelApp.add(colaMercado, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, 340, 30));
 
         colaRevisados.setBackground(new java.awt.Color(255, 255, 255));
         colaRevisados.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
         colaRevisados.setForeground(new java.awt.Color(252, 217, 76));
-        jPanelApp.add(colaRevisados, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 330, 30));
+        jPanelApp.add(colaRevisados, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, 330, 30));
 
         robRevisa1.setBackground(new java.awt.Color(255, 255, 255));
         robRevisa1.setFont(new java.awt.Font("MingLiU-ExtB", 1, 14)); // NOI18N

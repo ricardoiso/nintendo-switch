@@ -64,9 +64,9 @@ public class Cola {
 
         while (recorrido != null) {
             //Mostrar cola sin contador:
-            Cola += "(" + recorrido.informacion.ID + ")--> "; 
+//            Cola += "(" + recorrido.informacion.ID + ")--> "; 
             //Mostrar cola con contador:
-//            Cola += "[" + recorrido.informacion.ID + "_|_" + recorrido.informacion.contador + "]--> "; 
+            Cola += "[" + recorrido.informacion.ID + "_|_" + recorrido.informacion.contador + "]--> ";
             recorrido = recorrido.siguiente;
         }
 
@@ -75,7 +75,7 @@ public class Cola {
         for (int i = cadena.length - 1; i >= 0; i--) {
             ColaInvertida += " " + cadena[i];
         }
-        
+
 //        JOptionPane.showMessageDialog(null, ColaInvertida);
         Cola = "";
         return ColaInvertida;
@@ -112,6 +112,25 @@ public class Cola {
         Nodo recorrido = inicioCola;
         for (int i = 0; i < tamano; i++) {
             recorrido.informacion.contador = recorrido.informacion.contador + 1;
+            recorrido = recorrido.siguiente;
+        }
+    }
+
+    public void aumentoContadorR(int maxContador) {
+        int tamano = this.length();
+        Nodo recorrido = inicioCola;
+
+        for (int i = 0; i < tamano; i++) {
+            if (recorrido.informacion.prioridad != 0) {
+                recorrido.informacion.contador = recorrido.informacion.contador + 1;
+            }
+
+            if (recorrido.informacion.contador == maxContador) {
+                recorrido.informacion.contador = 0;
+                if (recorrido.informacion.prioridad != 0) {
+                    recorrido.informacion.prioridad--;
+                }
+            }
             recorrido = recorrido.siguiente;
         }
 

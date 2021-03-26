@@ -43,6 +43,10 @@ public class Control extends Thread {
                     adminG.reparacion_prioridad();
                 }
             }
+            
+            adminG.colaR.aumentoContadorR(adminG.maxContador);
+            
+            
             if (contador == 2) {
                 adminG.crearSS();
                 Interfaz.colaUno.setText(adminG.p1.MostrarContenido());
@@ -93,7 +97,7 @@ public class Control extends Thread {
                 Interfaz.contador.setText("Sin operar");
                 int time = 0;
                 for (int i = 0; i < tiempo+1; i++) {
-                    Interfaz.contador.setText(String.valueOf(time)+"s");
+                    Interfaz.contador.setText(String.valueOf(time)+" s");
                     Thread.sleep(1000);
                     time++;
                 }

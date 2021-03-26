@@ -28,6 +28,7 @@ public class Robot {
         double random = Math.random();
 //        System.out.println("El random de robot es " + random);
         Interfaz.tiempo.setText(Integer.toString(ss.ID));
+        ss.contador = 0;
 
         if (0 <= random && random < 0.3) { //agregar a mercado
             mercado.Insertar(ss);
