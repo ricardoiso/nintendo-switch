@@ -58,7 +58,7 @@ public class Control extends Thread {
                     Interfaz.colaRevisados.setText(adminG.colaR.MostrarContenido());
                     Interfaz.colaMercado.setText(bot.mercado.MostrarContenido());
                     JOptionPane.showMessageDialog(null, "Consola Nintendo Super Switch creada.");
-                    JOptionPane.showMessageDialog(null, "Se reinsertará en su cola respectiva al primer elemento de la cola de reparación.");
+                    //JOptionPane.showMessageDialog(null, "Se reinsertará en su cola respectiva al primer elemento de la cola de reparación.");
                     adminG.reparacion_prioridad();
                 }
             }
