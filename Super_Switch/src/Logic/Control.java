@@ -58,7 +58,7 @@ public class Control extends Thread {
                 contador = 1;
                 double random = Math.random();
                 if (!colaR.ColaVacia() && random <= 0.7) {
-                    JOptionPane.showMessageDialog(null, "Se reinsertará en su cola respectiva al primer elemento de la cola de reparación.");
+                    //JOptionPane.showMessageDialog(null, "Se reinsertará en su cola respectiva al primer elemento de la cola de reparación.");
                     adminG.reparacion_prioridad();
                 }
             }
