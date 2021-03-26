@@ -35,12 +35,15 @@ public class Interfaz extends javax.swing.JFrame {
 
         jPanelApp = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
-        robRevisa = new javax.swing.JLabel();
+        contador = new javax.swing.JLabel();
+        tiempo = new javax.swing.JLabel();
         colaUno = new javax.swing.JLabel();
         colaDos = new javax.swing.JLabel();
         colaTres = new javax.swing.JLabel();
+        colaMercado = new javax.swing.JLabel();
         colaRevisados = new javax.swing.JLabel();
-        labelBackg = new javax.swing.JLabel();
+        robRevisa1 = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -63,28 +66,46 @@ public class Interfaz extends javax.swing.JFrame {
         });
         jPanelApp.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, 60, 30));
 
-        robRevisa.setBackground(new java.awt.Color(255, 255, 255));
-        robRevisa.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelApp.add(robRevisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 220, 40, 30));
+        contador.setForeground(new java.awt.Color(252, 217, 76));
+        jPanelApp.add(contador, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 250, 110, 30));
+
+        tiempo.setBackground(new java.awt.Color(255, 255, 255));
+        tiempo.setFont(new java.awt.Font("MingLiU-ExtB", 1, 14)); // NOI18N
+        tiempo.setForeground(new java.awt.Color(252, 217, 76));
+        jPanelApp.add(tiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 220, 40, 30));
 
         colaUno.setBackground(new java.awt.Color(255, 255, 255));
-        colaUno.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelApp.add(colaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 370, 30));
+        colaUno.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
+        colaUno.setForeground(new java.awt.Color(252, 217, 76));
+        jPanelApp.add(colaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 400, 30));
 
         colaDos.setBackground(new java.awt.Color(255, 255, 255));
-        colaDos.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelApp.add(colaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 370, 30));
+        colaDos.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
+        colaDos.setForeground(new java.awt.Color(252, 217, 76));
+        jPanelApp.add(colaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 400, 30));
 
         colaTres.setBackground(new java.awt.Color(255, 255, 255));
-        colaTres.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelApp.add(colaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 370, 30));
+        colaTres.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
+        colaTres.setForeground(new java.awt.Color(252, 217, 76));
+        jPanelApp.add(colaTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 400, 30));
+
+        colaMercado.setBackground(new java.awt.Color(255, 255, 255));
+        colaMercado.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
+        colaMercado.setForeground(new java.awt.Color(252, 217, 76));
+        jPanelApp.add(colaMercado, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, 340, 30));
 
         colaRevisados.setBackground(new java.awt.Color(255, 255, 255));
-        colaRevisados.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelApp.add(colaRevisados, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 370, 30));
+        colaRevisados.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
+        colaRevisados.setForeground(new java.awt.Color(252, 217, 76));
+        jPanelApp.add(colaRevisados, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, 330, 30));
 
-        labelBackg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Segundo Proyecto Sistemas Operativos.jpg"))); // NOI18N
-        jPanelApp.add(labelBackg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 714));
+        robRevisa1.setBackground(new java.awt.Color(255, 255, 255));
+        robRevisa1.setFont(new java.awt.Font("MingLiU-ExtB", 1, 14)); // NOI18N
+        robRevisa1.setForeground(new java.awt.Color(252, 217, 76));
+        jPanelApp.add(robRevisa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 220, 40, 30));
+
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Segundo Proyecto Sistemas Operativos.jpg"))); // NOI18N
+        jPanelApp.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 714));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,13 +126,16 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Fondo;
     private javax.swing.JButton btnSalir;
     public static javax.swing.JLabel colaDos;
+    public static javax.swing.JLabel colaMercado;
     public static javax.swing.JLabel colaRevisados;
     public static javax.swing.JLabel colaTres;
     public static javax.swing.JLabel colaUno;
+    public static javax.swing.JLabel contador;
     private javax.swing.JPanel jPanelApp;
-    private javax.swing.JLabel labelBackg;
-    public static javax.swing.JLabel robRevisa;
+    public static javax.swing.JLabel robRevisa1;
+    public static javax.swing.JLabel tiempo;
     // End of variables declaration//GEN-END:variables
 }

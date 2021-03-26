@@ -18,6 +18,7 @@ public class Administrador {
     public Cola p2; // Cola de prioridad 2
     public Cola p3; // Cola de prioridad 3 
     public Cola colaR; // Cola de Revision 
+    public int maxContador = 15;
     ArrayList<superSwitch> listaSS = new ArrayList<superSwitch>();
 
     public Administrador(Cola p1, Cola p2, Cola p3, Cola colaR) {
@@ -40,8 +41,8 @@ public class Administrador {
         }
         if (listaSS.get(listaSS.size() - 1).prioridad == 2) {
             this.p3.Insertar(listaSS.get(listaSS.size() - 1));
+        
         }
-
     }
 
     public superSwitch consola() {//extraer la switch que esta al inicio de la cola prioridad más alta y lo retorna
@@ -80,7 +81,7 @@ public class Administrador {
         int tamano3 = p3.length();
         superSwitch consolaAux;
         for (int i = 0; i < tamano2; i++) {
-            if (p2.inicioCola.informacion.contador == 15) {
+            if (p2.inicioCola.informacion.contador == maxContador) {
                 consolaAux = p2.Extraer();
                 consolaAux.contador = 0;
                 consolaAux.prioridad--;
@@ -88,7 +89,7 @@ public class Administrador {
             }
         }
         for (int j = 0; j < tamano3; j++) {
-            if (p3.inicioCola.informacion.contador == 15) {
+            if (p3.inicioCola.informacion.contador == maxContador) {
                 consolaAux = p3.Extraer();
                 consolaAux.contador = 0;
                 consolaAux.prioridad--;
@@ -100,28 +101,17 @@ public class Administrador {
     public void reparacion_prioridad() {//Devuelve la primera consola de la cola de reparaciones y la inserta en la cola de su prioridad
         double random = Math.random();
         superSwitch consolaAuxR;
-        if (random < .045) {
+        if (random < 0.45) {
             consolaAuxR = colaR.Extraer();
-            if (consolaAuxR.contador >= 15 && consolaAuxR.prioridad != 1) {
-                consolaAuxR.contador = 0;
-                consolaAuxR.prioridad += 1;
-
-                switch (consolaAuxR.prioridad) {
-                    case 3:
-                        p3.Insertar(consolaAuxR);
-                        break;
-                    case 2:
-                        p2.Insertar(consolaAuxR);
-                        break;
-                    case 1:
-                        p1.Insertar(consolaAuxR);
-                        break;
-                    default:
-                        break;
-                }
-
+            System.out.println(consolaAuxR.ID);
+            System.out.println(consolaAuxR.prioridad);
+            if (consolaAuxR.prioridad == 1) {
+                p2.Insertar(consolaAuxR);
+            }if (consolaAuxR.prioridad == 0) {
+                p1.Insertar(consolaAuxR);
+            }if (consolaAuxR.prioridad == 2) {
+                p3.Insertar(consolaAuxR);
             }
         }
-
     }
 }
